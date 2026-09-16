@@ -1,5 +1,5 @@
 {% if page_type != 'mail' %}
-<form class="search-bar" action="/search/" role="search">
+<form class="search-bar" action="{{ '/search/' | url }}" role="search">
   <input type="text" name="q" placeholder="Search" aria-label="Search">
   <button type="submit" aria-label="Submit search">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

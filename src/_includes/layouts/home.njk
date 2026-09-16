@@ -4,10 +4,9 @@
 {% block site_title %}{% endblock %}
 
 {% block nav %}
-<!-- Homepage: vertical pastel color-chip stack, same slot as the interior nav-list -->
 <nav class="chip-stack">
   {% for item in categories.main_nav %}
-  <a class="chip" href="{{ item.url }}" style="background-color: {{ item.color }};">
+  <a class="chip" href="{{ item.url | url }}" style="background-color: {{ item.color }};">
     {{ item.label }}
   </a>
   {% endfor %}
@@ -40,8 +39,8 @@
   <section class="home-grid__something-else">
     <h2>{{ something_else.heading }}</h2>
     <img
-      src="{{ something_else.image }}-1200.webp"
-      srcset="{{ something_else.image }}-800.webp 800w, {{ something_else.image }}-1200.webp 1200w, {{ something_else.image }}-2000.webp 2000w"
+      src="{{ (something_else.image ~ '-1200.webp') | url }}"
+      srcset="{{ (something_else.image ~ '-800.webp') | url }} 800w, {{ (something_else.image ~ '-1200.webp') | url }} 1200w, {{ (something_else.image ~ '-2000.webp') | url }} 2000w"
       sizes="(max-width: 800px) 100vw, 50vw"
       alt="{{ something_else.caption or something_else.heading }}"
       loading="lazy">

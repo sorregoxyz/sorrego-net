@@ -5,6 +5,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
+    "build:gh-pages": "eleventy --pathprefix=sorrego-net"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

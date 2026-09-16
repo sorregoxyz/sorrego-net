@@ -8,9 +8,9 @@ hide_default_search: true
 
 {% block nav %}
 <nav class="nav-list">
-  <a class="nav-list__tid" href="/tid/">things I've done</a>
+  <a class="nav-list__tid" href="{{ '/tid/' | url }}">things I've done</a>
   <span class="nav-list__current">cabinet of definitions</span>
-  <a class="nav-list__archive" href="/archive/">ethnographic archive</a>
+  <a class="nav-list__archive" href="{{ '/archive/' | url }}">ethnographic archive</a>
 </nav>
 {% endblock %}
 
@@ -50,10 +50,10 @@ hide_default_search: true
       </div>
 
       {% for entry in item.entries %}
-    <article class="cabinet__entry" id="{{ entry.slug }}">
-      <h3 class="cabinet__entry-term">{{ entry.term }}</h3>
-      <p class="cabinet__entry-definition">{{ entry.definition | markdown | safe }}</p>
-    </article>
+      <article class="cabinet__entry" id="{{ entry.slug }}">
+        <h3 class="cabinet__entry-term">{{ entry.term }}</h3>
+        <p class="cabinet__entry-definition">{{ entry.definition | markdown | safe }}</p>
+      </article>
       {% endfor %}
     </section>
     {% endif %}

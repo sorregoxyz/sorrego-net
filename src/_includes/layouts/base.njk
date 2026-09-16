@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or "Santiago Orrego — Experimental Ethnography" }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body class="page--{{ page_type or 'default' }}">
 
@@ -13,13 +13,13 @@
     <div class="header-grid">
 
       <aside class="sidebar__header">
-        <a class="wordmark" href="/">{% block wordmark %}home{% endblock %}</a>
+        <a class="wordmark" href="{{ '/' | url }}">{% block wordmark %}home{% endblock %}</a>
         <span class="accent-dash"></span>
         {% block nav %}
         <nav class="nav-list">
-          <a href="/tid/">things I've done</a>
-          <a href="/cabinet/">cabinet of definitions</a>
-          <a href="/archive/">ethnographic archive</a>
+          <a href="{{ '/tid/' | url }}">things I've done</a>
+          <a href="{{ '/cabinet/' | url }}">cabinet of definitions</a>
+          <a href="{{ '/archive/' | url }}">ethnographic archive</a>
         </nav>
         {% endblock %}
       </aside>
@@ -30,7 +30,7 @@
           <div class="site-title">Santiago Orrego – Experimental Ethnography</div>
           {% endblock %}
           <nav class="main-links">
-            <a href="/cv/">CV</a>
+            <a href="{{ '/cv/' | url }}">CV</a>
             <a href="mailto:santiago@sorrego.net">Mail</a>
             <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
           </nav>
@@ -59,7 +59,7 @@
 
   <footer class="site-footer">
     <span>
-      <a href="/">Santiago Orrego</a> |
+      <a href="{{ '/' | url }}">Santiago Orrego</a> |
       <span id="footer-year"></span> |
       Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en" target="_blank" rel="noopener">CC BY 4.0</a>
     </span>
