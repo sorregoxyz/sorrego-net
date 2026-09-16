@@ -4,7 +4,7 @@
   "description": "sorrego.net — static rebuild (Eleventy)",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
     "build:gh-pages": "eleventy --pathprefix=sorrego-net"
   },
   "devDependencies": {
