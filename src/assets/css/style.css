@@ -1,0 +1,426 @@
+/* ---------------------------------------------------------
+   Fonts
+   - VT323: everything, body and headings alike
+   - Coral Pixels: logo/wordmark only
+--------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=VT323&display=swap');
+
+:root {
+  --font-mono: "VT323", "SFMono-Regular", "Menlo", "Consolas", monospace;
+  --font-logo: "Coral Pixels", var(--font-mono);
+
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-border: #1a1a1a;
+  --color-muted: #6b6b6b;
+
+  --sidebar-width: 280px;
+  --gap: 1.5rem;
+  --max-width: 1200px;
+
+  font-size: 19px;
+}
+
+.home-grid__about h2::after,
+.home-grid__something-else h2::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  border-top: 3px solid var(--color-text);
+  margin-top: 0.35rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: normal;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+body.page--cabinet {
+  background: #EEFDE3;
+}
+
+.search-bar {
+  border-color: var(--search-accent, var(--color-border));
+}
+
+/* Short accent dash used under the wordmark and the intro text,
+   matching the "── " flourish in the mockups (not a full rule). */
+.accent-dash {
+  display: block;
+  width: 2rem;
+  border-top: 3px solid var(--color-text);
+  margin-top: 0.35rem;
+}
+
+.section-title {
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+    line-height: 1.1;
+  margin-bottom: 0.1rem;
+}
+
+.section-subtitle {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.rule-double {
+  height: 3px;
+  border-top: 2.5px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  margin: 1rem 0 2rem;
+}
+
+.cabinet__az {
+  display: grid;
+  grid-template-columns: repeat(26, 1fr);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  margin-bottom: 1rem;
+}
+
+.cabinet__az a,
+.cabinet__az-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0;
+  font-size: 1.5rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.cabinet__az-empty {
+  color: var(--color-muted);
+}
+
+.cabinet__letter {
+  margin-bottom: 2rem;
+}
+
+.cabinet__letter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #6C9850;
+  padding: 0.1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.cabinet__letter-head h2 {
+  color: #EEFDE3;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.cabinet__back-to-top {
+  color: #EEFDE3;
+  font-size: 1.1rem;
+}
+
+.cabinet__back-to-top {
+  font-size: 0.9rem;
+}
+
+.cabinet__title-row {
+  display: flex;
+  line-height: 1.1;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.1rem;
+}
+
+.cabinet__title-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cabinet__entry {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 2rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cabinet__entry:last-child {
+  border-bottom: none;
+}
+
+.cabinet__entry-term {
+  text-align: center;
+  margin: 0;
+}
+
+.cabinet__entry-definition {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .cabinet__entry {
+    grid-template-columns: 1fr;
+  }
+  .cabinet__entry-term {
+    text-align: left;
+  }
+}
+
+body.page--cabinet .search-bar input,
+body.page--cabinet .search-bar button {
+  background: #EEFDE3;
+}
+
+body.page--cabinet .nav-list__tid {
+  background: #A4E0FC;
+}
+
+body.page--cabinet .nav-list__archive {
+  background: #FCE08C;
+}
+
+body.page--cabinet .nav-list__current {
+  background: #6C9850;
+  color: #EEFDE3;
+}
+
+.nav-list__tid,
+.nav-list__archive,
+.nav-list__current {
+  padding: 0.1rem 1rem;
+}
+
+/* ---------------------------------------------------------
+   Page shell — two-column header zone (sidebar | main),
+   closed off by one full-width rule, then full-width content.
+--------------------------------------------------------- */
+.shell {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--gap);
+}
+
+/* --- Sidebar column (hello world + nav/chips) --- */
+.sidebar__header {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.wordmark {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+.chip-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2.2rem;
+}
+
+.chip {
+  padding: 0.1rem 1rem;
+  border-radius: 0px;
+}
+
+.nav-list a {
+  padding: 0.1rem 1rem;
+  border-radius: 0px;
+  background: #e8e8e8;
+}
+
+/* --- Main column (CV/Mail/GitHub + subheader + search) --- */
+.main__header {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.main-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.main-links a {
+  padding: 0 1.25rem;
+}
+
+.main-links a:not(:first-child) {
+  border-left: 2px solid var(--color-text);
+}
+
+.main__subheader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.search-bar {
+  align-self: flex-end;
+}
+
+.intro {
+  max-width: none;
+}
+
+/* --- Search bar: square, single integrated unit, black retro glass --- */
+.search-bar {
+  display: flex;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.search-bar input {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  border: none;
+  border-right: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0.4rem 0.8rem;
+  width: 200px;
+  background: var(--color-bg);
+}
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar button {
+  border: none;
+  border-radius: 0;
+  width: 2.4rem;
+  background: var(--color-bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Closes off the whole header zone, full page width --- */
+.header-rule {
+  border: none;
+  height: 4px;
+  border-top: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+  margin: 1rem 0 2rem;
+}
+
+.main-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.site-title {
+  font-family: var(--font-logo);
+  font-size: 1.3rem;
+}
+
+/* ---------------------------------------------------------
+   Homepage content grid (full width, below the header zone)
+--------------------------------------------------------- */
+.home-grid {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr 2fr; /* logo 15% / about 35% / something-else 50% */
+  gap: var(--gap);
+}
+
+.home-grid__logo .logo {
+  font-family: var(--font-logo);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-grid__logo .logo__tagline {
+  font-size: 1.1rem;
+}
+
+.home-grid__about h2,
+.home-grid__something-else h2 {
+  margin-bottom: 1rem;
+}
+
+.home-grid__something-else img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-grid__something-else .caption {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Stack to a single column below tablet width */
+@media (max-width: 800px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .main__subheader {
+    flex-direction: column;
+  }
+}
+
+/* ---------------------------------------------------------
+   Footer
+--------------------------------------------------------- */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0.5rem auto 0;
+  padding: 1rem 1.5rem 2rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}

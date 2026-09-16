@@ -1,0 +1,63 @@
+---
+permalink: /cabinet/
+title: "Cabinet of Definitions — Santiago Orrego"
+page_type: cabinet
+hide_default_search: true
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}
+<nav class="nav-list">
+  <a class="nav-list__tid" href="/tid/">things I've done</a>
+  <span class="nav-list__current">cabinet of definitions</span>
+  <a class="nav-list__archive" href="/archive/">ethnographic archive</a>
+</nav>
+{% endblock %}
+
+{% block subheader %}
+<p class="intro">{{ cabinet.intro }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="cabinet" id="list">
+
+<div class="cabinet__title-row">
+    <div class="cabinet__title-group">
+      <h1 class="section-title">{{ cabinet.title }}</h1>
+      <p class="section-subtitle">{{ cabinet.subtitle }}</p>
+    </div>
+    {% include "partials/search-bar.njk" %}
+</div>
+
+  <div class="rule-double"></div>
+
+  <nav class="cabinet__az" aria-label="Jump to letter">
+    {% for item in cabinet.letters %}
+      {% if item.hasEntries %}
+        <a href="#letter-{{ item.letter }}">{{ item.letter }}</a>
+      {% else %}
+        <span class="cabinet__az-empty">{{ item.letter }}</span>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  {% for item in cabinet.letters %}
+    {% if item.hasEntries %}
+    <section class="cabinet__letter" id="letter-{{ item.letter }}">
+      <div class="cabinet__letter-head">
+        <h2>{{ item.letter }}</h2>
+        <a class="cabinet__back-to-top" href="#list" aria-label="Back to top">&uarr;</a>
+      </div>
+
+      {% for entry in item.entries %}
+    <article class="cabinet__entry" id="{{ entry.slug }}">
+      <h3 class="cabinet__entry-term">{{ entry.term }}</h3>
+      <p class="cabinet__entry-definition">{{ entry.definition | markdown | safe }}</p>
+    </article>
+      {% endfor %}
+    </section>
+    {% endif %}
+  {% endfor %}
+
+</div>
+{% endblock %}

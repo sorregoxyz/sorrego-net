@@ -1,0 +1,33 @@
+# Single source of truth for pastel colors + nav labels.
+# Add a new theme by adding an entry under `categories` — no template changes needed.
+
+# Top-level homepage nav chips (Things I've Done / Cabinet / Archive)
+main_nav:
+  - slug: things-ive-done
+    label: "things I've done"
+    url: /tid/
+    # PLACEHOLDER — "Things I've Done" wraps 3 sub-themes with their own colors
+    # (sand / sage / lavender-grey below). Needs a color decision: pick one of
+    # the three, or a neutral chip color distinct from all sub-theme colors.
+    color: "#A4E0FC"
+  - slug: cabinet-of-definitions
+    label: "cabinet of definitions"
+    url: /cabinet/
+    color: "#C8FCA4"
+  - slug: ethnographic-archive
+    label: "ethnographic archive"
+    url: /archive/
+    color: "#FCE08C "
+
+# Thematic categories under "Things I've Done" — each is a literal folder
+# under content/, e.g. content/multimodal-experiments/
+categories:
+  - slug: multimodal-experiments
+    label: "multimodal experiments"
+    color: "#F4E8D8"
+  - slug: more-than-human-ethnography
+    label: "more-than-human ethnography"
+    color: "#E4EDE3"
+  - slug: urban-infrastructures
+    label: "urban infrastructures"
+    color: "#E6E3ED"

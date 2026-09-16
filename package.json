@@ -1,0 +1,14 @@
+{
+  "name": "sorrego-net",
+  "version": "0.1.0",
+  "description": "sorrego.net — static rebuild (Eleventy)",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0"
+  }
+}

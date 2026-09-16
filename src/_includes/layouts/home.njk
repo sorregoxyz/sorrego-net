@@ -1,0 +1,55 @@
+{% extends "layouts/base.njk" %}
+{% block wordmark %}hello world{% endblock %}
+
+{% block site_title %}{% endblock %}
+
+{% block nav %}
+<!-- Homepage: vertical pastel color-chip stack, same slot as the interior nav-list -->
+<nav class="chip-stack">
+  {% for item in categories.main_nav %}
+  <a class="chip" href="{{ item.url }}" style="background-color: {{ item.color }};">
+    {{ item.label }}
+  </a>
+  {% endfor %}
+</nav>
+{% endblock %}
+
+{% block subheader %}
+<p class="intro">{{ intro }}</p>
+<span class="accent-dash"></span>
+{% endblock %}
+
+{% block content %}
+
+<div class="home-grid">
+
+  <section class="home-grid__logo">
+    <h1 class="logo">
+      <span class="logo__name">{{ logo.name }}</span>
+      <span class="logo__tagline">{{ logo.tagline }}</span>
+    </h1>
+  </section>
+
+  <section class="home-grid__about">
+    <h2>About</h2>
+    {% for paragraph in about %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+  </section>
+
+  <section class="home-grid__something-else">
+    <h2>{{ something_else.heading }}</h2>
+    <img
+      src="{{ something_else.image }}-1200.webp"
+      srcset="{{ something_else.image }}-800.webp 800w, {{ something_else.image }}-1200.webp 1200w, {{ something_else.image }}-2000.webp 2000w"
+      sizes="(max-width: 800px) 100vw, 50vw"
+      alt="{{ something_else.caption or something_else.heading }}"
+      loading="lazy">
+    {% if something_else.caption %}
+    <p class="caption">{{ something_else.caption }}</p>
+    {% endif %}
+  </section>
+
+</div>
+
+{% endblock %}
