@@ -409,6 +409,51 @@ body.page--cabinet .nav-list__current {
   .main__subheader {
     flex-direction: column;
   }
+
+  /* Title block (logo/site name) stacks above the CV/Mail/GitHub
+     menu instead of squeezing beside it. */
+  .main-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Cabinet header: title above its subtitle, both above the
+     search bar, all left-aligned instead of a cramped row. */
+  .cabinet__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .cabinet__title-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .search-bar {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .search-bar input {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  /* Let the A-Z index scroll within itself rather than
+     stretching the whole page wider than the screen. */
+  .cabinet__az {
+    overflow-x: auto;
+  }
+}
+
+/* Safety net: nothing on the page should force horizontal
+   scrolling of the whole document. */
+html, body {
+  overflow-x: hidden;
 }
 
 /* ---------------------------------------------------------
