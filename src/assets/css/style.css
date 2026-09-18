@@ -443,10 +443,20 @@ body.page--cabinet .nav-list__current {
     min-width: 0;
   }
 
-  /* Let the A-Z index scroll within itself rather than
-     stretching the whole page wider than the screen. */
+  /* Wrap the A-Z index into two rows of 13 letters instead of
+     one cramped (or scrolling) row of 26. */
   .cabinet__az {
-    overflow-x: auto;
+    grid-template-columns: repeat(13, 1fr);
+  }
+
+  .cabinet__az a,
+  .cabinet__az-empty {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cabinet__az a:nth-last-child(-n+13),
+  .cabinet__az-empty:nth-last-child(-n+13) {
+    border-bottom: none;
   }
 }
 
