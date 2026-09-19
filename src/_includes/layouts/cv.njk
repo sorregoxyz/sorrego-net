@@ -1,0 +1,17 @@
+---
+---
+{% extends "layouts/base.njk" %}
+
+{% block subheader %}
+<p class="intro"><a href="mailto:{{ email }}">{{ email }}</a></p>
+{% endblock %}
+
+{% block content %}
+<div class="cv">
+  <h1 class="section-title">{{ heading }}</h1>
+  <div class="rule-double"></div>
+  <div class="cv__body">
+    {{ content | safe }}
+  </div>
+</div>
+{% endblock %}
