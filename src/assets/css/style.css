@@ -506,6 +506,41 @@ body.page--cabinet .nav-list__current {
   gap: 0.5rem;
 }
 
+/* ---------------------------------------------------------
+   Things I've Done — theme cards (image + colored label)
+--------------------------------------------------------- */
+.tid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.tid-card {
+  display: block;
+}
+
+.tid-card:hover {
+  text-decoration: none;
+}
+
+.tid-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.tid-card__label {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+@media (max-width: 800px) {
+  .tid-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Stack to a single column below tablet width */
 @media (max-width: 800px) {
   .header-grid {

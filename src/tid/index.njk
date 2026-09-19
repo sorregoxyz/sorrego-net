@@ -26,11 +26,18 @@ nav_current_text: "#EBF8FD"
 
 <div class="rule-double"></div>
 
-<nav class="chip-stack tid-index__themes">
+<div class="tid-cards">
   {% for cat in categories.categories %}
-  <a class="chip" href="{{ ('/tid/' ~ cat.slug ~ '/') | url }}" style="background-color: {{ cat.color }};">
-    {{ cat.label }}
+  <a class="tid-card" href="{{ ('/tid/' ~ cat.slug ~ '/') | url }}">
+    <img
+      class="tid-card__image"
+      src="{{ (cat.image ~ '-' ~ (cat.image_widths | last) ~ '.webp') | url }}"
+      srcset="{% for w in cat.image_widths %}{{ (cat.image ~ '-' ~ w ~ '.webp') | url }} {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+      sizes="(max-width: 800px) 100vw, 33vw"
+      alt="{{ cat.label }}"
+      loading="lazy">
+    <span class="tid-card__label" style="background-color: {{ cat.color }};">{{ cat.label }}</span>
   </a>
   {% endfor %}
-</nav>
+</div>
 {% endblock %}

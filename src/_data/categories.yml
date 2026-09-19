@@ -21,13 +21,21 @@ main_nav:
 
 # Thematic categories under "Things I've Done" — each is a literal folder
 # under content/, e.g. content/multimodal-experiments/
+# `image` is the base path (no size suffix); `image_widths` lists the
+# actual generated widths, used to build a srcset on the /tid/ cards.
 categories:
-  - slug: multimodal-experiments
-    label: "multimodal experiments"
-    color: "#F4E8D8"
   - slug: more-than-human-ethnography
     label: "more-than-human ethnography"
-    color: "#E4EDE3"
+    color: "#A1E6E2"
+    image: "/assets/images/things/multispecies"
+    image_widths: [730, 1095, 1825]
+  - slug: multimodal-experiments
+    label: "multimodal experiments"
+    color: "#F6BDF2"
+    image: "/assets/images/things/multimodal"
+    image_widths: [730, 1095, 1825]
   - slug: urban-infrastructures
     label: "urban infrastructures"
-    color: "#E6E3ED"
+    color: "#F5F556"
+    image: "/assets/images/things/infrastructure"
+    image_widths: [730, 1025, 1095]
