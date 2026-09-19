@@ -1,0 +1,16 @@
+---
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block subheader %}
+<p class="breadcrumb">{{ breadcrumb }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="entry entry--diy">
+  {% include "partials/entry-header.njk" %}
+  {{ content | safe }}
+</div>
+{% endblock %}

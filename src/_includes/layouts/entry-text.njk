@@ -1,0 +1,25 @@
+---
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block subheader %}
+<p class="breadcrumb">{{ breadcrumb }}</p>
+{% endblock %}
+
+{% block content %}
+<article class="entry entry--text{% if not header_image %} entry--no-image{% endif %}">
+  {% include "partials/entry-header.njk" %}
+
+  {% if header_image %}
+  <figure class="entry-media entry-media--header">
+    <img src="{{ header_image | url }}" alt="{{ header_image_alt or title }}" loading="lazy">
+  </figure>
+  {% endif %}
+
+  <div class="entry-body">
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

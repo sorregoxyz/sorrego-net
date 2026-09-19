@@ -1,0 +1,19 @@
+---
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block subheader %}
+<p class="breadcrumb">{{ breadcrumb }}</p>
+{% endblock %}
+
+{% block content %}
+<article class="entry entry--media">
+  {% include "partials/entry-header.njk" %}
+
+  <div class="entry-media entry-media--full"{% if media_tint %} style="--media-tint: {{ media_tint }};"{% endif %}>
+    <img src="{{ media | url }}" alt="{{ media_alt or title }}" loading="lazy">
+  </div>
+</article>
+{% endblock %}
