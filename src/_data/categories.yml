@@ -14,9 +14,9 @@ main_nav:
     label: "cabinet of definitions"
     url: /cabinet/
     color: "#C8FCA4"
-  - slug: ethnographic-archive
-    label: "ethnographic archive"
-    url: /archive/
+  - slug: blog
+    label: "blog"
+    url: /blog/
     color: "#FCE08C "
 
 # Thematic categories under "Things I've Done" — each is a literal folder
