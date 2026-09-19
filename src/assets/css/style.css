@@ -84,6 +84,19 @@ body.page--cabinet {
   margin-bottom: 0.1rem;
 }
 
+.section-title__back {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-title__back:hover {
+  text-decoration: underline;
+}
+
+.section-title__current {
+  margin-left: 0.6rem;
+}
+
 .section-subtitle {
   color: var(--color-muted);
   margin: 0;

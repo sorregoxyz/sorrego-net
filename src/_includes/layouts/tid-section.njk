@@ -10,7 +10,10 @@
 
 {% block content %}
 <div class="tid-section">
-  <h1 class="section-title">{{ title }}</h1>
+  <h1 class="section-title">
+    <a class="section-title__back" href="{{ '/tid/' | url }}">things I've done/</a>
+    <span class="section-title__current">{{ title | lower }}</span>
+  </h1>
   <div class="rule-double"></div>
 
   <div class="tid-section__intro">
