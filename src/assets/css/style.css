@@ -360,6 +360,12 @@ body.page--cabinet .nav-list__current {
   font-size: 1.3rem;
 }
 
+/* --- Things I've Done subheader: title + subtitle, above the search bar --- */
+   body.page--tid-index .search-bar input,
+   body.page--tid-index .search-bar button {
+     background: #EBF8FD;
+   }
+
 /* ---------------------------------------------------------
    Homepage content grid (full width, below the header zone)
 --------------------------------------------------------- */
