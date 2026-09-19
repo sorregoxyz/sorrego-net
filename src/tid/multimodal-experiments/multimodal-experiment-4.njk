@@ -1,0 +1,54 @@
+---
+layout: layouts/entry-diy.njk
+title: "multimodal-experiment-4"
+breadcrumb: "multimodal experiments/multimodal-experiment-4"
+tags: ["tag 1", "tag 2"]
+date: 2026-06-09
+theme_color: "#F4E8D8"
+page_type: tid
+---
+<div class="diy-demo">
+  <div class="diy-demo__circles">
+    <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="45" cy="55" r="40" fill="#E4536B" opacity="0.85"/>
+      <circle cx="120" cy="70" r="55" fill="#6C9850" opacity="0.85"/>
+      <circle cx="70" cy="120" r="18" fill="#E8D24C" opacity="0.9"/>
+      <circle cx="25" cy="135" r="12" fill="#3B4B6B" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="diy-demo__grid">
+    {% for i in range(0, 24) %}
+    <span class="diy-demo__cell{% if i in [3, 9, 14, 19] %} is-filled{% endif %}"></span>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .diy-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .diy-demo__circles svg {
+    width: 100%;
+    height: auto;
+  }
+  .diy-demo__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    border: 1px solid var(--color-border);
+  }
+  .diy-demo__cell {
+    aspect-ratio: 1;
+    border: 1px solid var(--color-border);
+  }
+  .diy-demo__cell.is-filled {
+    background: #A4E0FC;
+  }
+  @media (max-width: 700px) {
+    .diy-demo {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+permalink: /tid/
+title: "Things I've Done — Santiago Orrego"
+page_type: tid
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block subheader %}
+<p class="intro">A brief text about this section.</p>
+{% endblock %}
+
+{% block content %}
+<nav class="chip-stack tid-index__themes">
+  {% for cat in categories.categories %}
+  <a class="chip" href="{{ ('/tid/' ~ cat.slug ~ '/') | url }}" style="background-color: {{ cat.color }};">
+    {{ cat.label }}
+  </a>
+  {% endfor %}
+</nav>
+{% endblock %}

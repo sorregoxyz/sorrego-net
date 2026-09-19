@@ -1,0 +1,29 @@
+---
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block subheader %}
+<p class="section-subtitle">{{ subtitle }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="tid-section">
+  <h1 class="section-title">{{ title }}</h1>
+  <div class="rule-double"></div>
+
+  <div class="tid-section__intro">
+    {{ content | safe }}
+  </div>
+
+  {% set pieces = collections.all | bySection(section_prefix) %}
+  {% if pieces.length %}
+  <ul class="tid-section__pieces">
+    {% for piece in pieces %}
+    <li><a href="{{ piece.url }}">{{ piece.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}

@@ -398,6 +398,108 @@ body.page--cabinet .nav-list__current {
   margin-top: 0.5rem;
 }
 
+/* ---------------------------------------------------------
+   Content entries ("Things I've Done" pieces) — three types:
+   text (entry--text), full-bleed media (entry--media), and
+   freeform (entry--diy). Shared: breadcrumb + entry-header.
+--------------------------------------------------------- */
+.breadcrumb {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.entry-header {
+  margin-bottom: 1.5rem;
+}
+
+.entry-title {
+  font-size: 1.8rem;
+}
+
+.entry-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-tag {
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.75rem;
+}
+
+.entry-date {
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* --- Text entries: optional header image, then body copy --- */
+.entry-media--header {
+  margin: 0 0 1.5rem;
+}
+
+.entry-media--header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.entry-body {
+  max-width: 65ch;
+}
+
+/* --- Media entries: full-bleed, optionally duotone-tinted,
+   scrollable if taller than its box --- */
+.entry-media--full {
+  background: var(--media-tint, var(--color-bg));
+  max-height: 75vh;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+}
+
+.entry-media--full img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+/* --- DIY entries: shared chrome only, page brings its own markup --- */
+.entry--diy {
+  /* Intentionally unopinionated: a DIY entry supplies its own
+     layout/styles below the shared header. */
+}
+
+/* ---------------------------------------------------------
+   Theme folder index (e.g. /tid/multimodal-experiments/) —
+   intro text directly on the page, pieces listed below.
+--------------------------------------------------------- */
+.tid-section__intro {
+  max-width: 65ch;
+  margin-bottom: 2rem;
+}
+
+.tid-section__pieces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* Stack to a single column below tablet width */
 @media (max-width: 800px) {
   .header-grid {
@@ -430,6 +532,13 @@ body.page--cabinet .nav-list__current {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
+  }
+
+  /* Entry header: tags above the date, left-aligned, instead of
+     a row that gets squeezed. */
+  .entry-meta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .search-bar {
