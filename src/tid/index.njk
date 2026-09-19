@@ -1,7 +1,8 @@
 ---
 permalink: /tid/
 title: "Things I've Done — Santiago Orrego"
-page_type: tid
+page_type: tid-index
+hide_default_search: true
 theme_color: "#EBF8FD"
 nav_current_bg: "#689CC0"
 nav_current_text: "#EBF8FD"
@@ -15,6 +16,16 @@ nav_current_text: "#EBF8FD"
 {% endblock %}
 
 {% block content %}
+<div class="cabinet__title-row">
+  <div class="cabinet__title-group">
+    <h1 class="section-title">Things I've done</h1>
+    <p class="section-subtitle">every piece is a doorway to novel ways of knowing</p>
+  </div>
+  {% include "partials/search-bar.njk" %}
+</div>
+
+<div class="rule-double"></div>
+
 <nav class="chip-stack tid-index__themes">
   {% for cat in categories.categories %}
   <a class="chip" href="{{ ('/tid/' ~ cat.slug ~ '/') | url }}" style="background-color: {{ cat.color }};">
