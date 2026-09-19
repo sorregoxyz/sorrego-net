@@ -41,6 +41,6 @@ categories:
     image_widths: [730, 1025, 1095]
   - slug: studio-ethnography
     label: "studio ethnography"
-    color: "#EA0124"
+    color: "#F94B65"
     image: "/assets/images/things/studio"
     image_widths: [730, 1095, 1825]
