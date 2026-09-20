@@ -2,14 +2,23 @@
 ---
 {% extends "layouts/base.njk" %}
 
+{% block nav %}
+<nav class="chip-stack">
+  {% for item in categories.main_nav %}
+  <a class="chip" href="{{ item.url | url }}" style="background-color: {{ item.color }};">
+    {{ item.label }}
+  </a>
+  {% endfor %}
+</nav>
+{% endblock %}
+
 {% block subheader %}
-<p class="intro"><a href="mailto:{{ email }}">{{ email }}</a></p>
+<p class="intro">{{ intro }}</p>
+<span class="accent-dash"></span>
 {% endblock %}
 
 {% block content %}
 <div class="cv">
-  <h1 class="section-title">{{ heading }}</h1>
-  <div class="rule-double"></div>
   <div class="cv__body">
     {{ content | safe }}
   </div>

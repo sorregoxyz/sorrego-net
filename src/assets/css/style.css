@@ -626,6 +626,10 @@ body.page--cabinet .nav-list__current {
 /* ---------------------------------------------------------
    CV page
 --------------------------------------------------------- */
+body.page--cv .main-links__cv {
+  background: #D9D9D9;
+}
+
 .cv__body h2 {
   font-family: var(--font-logo);
   font-size: 1.1rem;

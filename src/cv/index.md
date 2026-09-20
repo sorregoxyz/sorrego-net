@@ -3,9 +3,12 @@ layout: layouts/cv.njk
 permalink: /cv/
 title: "CV — Santiago Orrego"
 page_type: cv
-hide_default_search: true
-heading: "Santiago Orrego"
-email: "orrego.santiago@protonmail.com"
+intro: >
+  I am an STS ethnographer working at the intersection of multispecies
+  research, environmental humanities, and urban infrastructure studies,
+  using multimodal and inventive methods. He works at the Materialities
+  of Crisis Ethnographic Lab at the University of Murcia, closely
+  attending to heat, toxicity, afterlives, and more-than-human governance.
 ---
 ## Position
 
