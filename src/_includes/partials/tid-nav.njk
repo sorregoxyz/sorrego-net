@@ -1,5 +1,9 @@
 <nav class="nav-list">
+  {% if tid_is_current %}
   <span class="nav-list__current" style="background: {{ nav_current_bg or theme_color or '#e8e8e8' }};{% if nav_current_text %} color: {{ nav_current_text }};{% endif %}">things I've done</span>
+  {% else %}
+  <a class="nav-list__tid" href="{{ '/tid/' | url }}" style="background: #A4E0FC;">things I've done</a>
+  {% endif %}
   <a href="{{ '/cabinet/' | url }}" style="background: #C8FCA4;">cabinet of definitions</a>
   <a href="{{ '/blog/' | url }}" style="background: #FCE08C;">blog</a>
 </nav>
