@@ -5,7 +5,7 @@
 {% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
 
 {% block subheader %}
-<p class="breadcrumb">{{ breadcrumb }}</p>
+{% include "partials/entry-breadcrumb.njk" %}
 {% endblock %}
 
 {% block content %}

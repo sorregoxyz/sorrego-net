@@ -78,9 +78,9 @@ body.page--cabinet {
 }
 
 .section-title {
-  font-family: var(--font-logo);
-  font-size: 1.4rem;
-    line-height: 1.1;
+  font-family: var(--font-mono);
+  font-size: 2.6rem;
+  line-height: 1.1;
   margin-bottom: 0.1rem;
 }
 
@@ -335,7 +335,7 @@ body.page--cabinet .nav-list__current {
   border-radius: 0;
   padding: 0.4rem 0.8rem;
   width: 200px;
-  background: var(--color-bg);
+  background: var(--page-bg, var(--color-bg));
 }
 .search-bar input:focus {
   outline: none;
@@ -345,7 +345,7 @@ body.page--cabinet .nav-list__current {
   border: none;
   border-radius: 0;
   width: 2.4rem;
-  background: var(--color-bg);
+  background: var(--page-bg, var(--color-bg));
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -372,12 +372,6 @@ body.page--cabinet .nav-list__current {
   font-family: var(--font-logo);
   font-size: 1.3rem;
 }
-
-/* --- Things I've Done subheader: title + subtitle, above the search bar --- */
-   body.page--tid-index .search-bar input,
-   body.page--tid-index .search-bar button {
-     background: #EBF8FD;
-   }
 
 /* ---------------------------------------------------------
    Homepage content grid (full width, below the header zone)
@@ -425,6 +419,15 @@ body.page--cabinet .nav-list__current {
 .breadcrumb {
   color: var(--color-muted);
   margin: 0;
+  font-size: 1.3rem;
+}
+
+.breadcrumb a {
+  color: var(--color-muted);
+}
+
+.breadcrumb__current {
+  color: var(--color-text);
 }
 
 .entry-header {
@@ -432,7 +435,7 @@ body.page--cabinet .nav-list__current {
 }
 
 .entry-title {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
 }
 
 .entry-meta {
@@ -475,7 +478,7 @@ body.page--cabinet .nav-list__current {
 }
 
 .entry-body {
-  max-width: 65ch;
+  max-width: none;
 }
 
 /* --- Media entries: full-bleed, optionally duotone-tinted,
