@@ -24,7 +24,7 @@
   {% if pieces.length %}
   <ul class="tid-section__pieces">
     {% for piece in pieces %}
-    <li><a href="{{ piece.url }}">{{ piece.data.title }}</a></li>
+    <li><a href="{{ piece.url | url }}">{{ piece.data.title }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}
