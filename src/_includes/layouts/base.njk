@@ -6,7 +6,7 @@
   <title>{{ title or "Santiago Orrego — Experimental Ethnography" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
-<body class="page--{{ page_type or 'default' }}"{% if theme_color %} style="background: {{ theme_color }}; --page-bg: {{ theme_color }};"{% endif %}>
+<body class="page--{{ page_type or 'default' }}"{% if theme_color and not is_entry_page %} style="background: {{ theme_color }}; --page-bg: {{ theme_color }};"{% endif %}>
 
   <div class="shell">
 

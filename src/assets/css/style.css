@@ -79,7 +79,7 @@ body.page--cabinet {
 
 .section-title {
   font-family: var(--font-mono);
-  font-size: 2.6rem;
+  font-size: 2.1rem;
   line-height: 1.1;
   margin-bottom: 0.1rem;
 }
@@ -509,7 +509,7 @@ body.page--cabinet .nav-list__current {
    intro text directly on the page, pieces listed below.
 --------------------------------------------------------- */
 .tid-section__intro {
-  max-width: 65ch;
+  max-width: none;
   margin-bottom: 2rem;
 }
 

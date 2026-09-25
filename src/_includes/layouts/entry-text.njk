@@ -1,15 +1,14 @@
 ---
+is_entry_page: true
 ---
 {% extends "layouts/base.njk" %}
 
 {% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
 
-{% block subheader %}
-{% include "partials/entry-breadcrumb.njk" %}
-{% endblock %}
-
 {% block content %}
 <article class="entry entry--text{% if not header_image %} entry--no-image{% endif %}">
+  {% include "partials/entry-breadcrumb.njk" %}
+  <div class="rule-double"></div>
   {% include "partials/entry-header.njk" %}
 
   {% if header_image %}

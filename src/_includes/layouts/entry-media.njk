@@ -1,15 +1,14 @@
 ---
+is_entry_page: true
 ---
 {% extends "layouts/base.njk" %}
 
 {% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
 
-{% block subheader %}
-{% include "partials/entry-breadcrumb.njk" %}
-{% endblock %}
-
 {% block content %}
 <article class="entry entry--media">
+  {% include "partials/entry-breadcrumb.njk" %}
+  <div class="rule-double"></div>
   {% include "partials/entry-header.njk" %}
 
   <div class="entry-media entry-media--full"{% if media_tint %} style="--media-tint: {{ media_tint }};"{% endif %}>

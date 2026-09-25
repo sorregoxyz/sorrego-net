@@ -1,15 +1,14 @@
 ---
+is_entry_page: true
 ---
 {% extends "layouts/base.njk" %}
 
 {% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
 
-{% block subheader %}
-{% include "partials/entry-breadcrumb.njk" %}
-{% endblock %}
-
 {% block content %}
 <div class="entry entry--diy">
+  {% include "partials/entry-breadcrumb.njk" %}
+  <div class="rule-double"></div>
   {% include "partials/entry-header.njk" %}
   {{ content | safe }}
 </div>
