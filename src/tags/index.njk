@@ -1,0 +1,30 @@
+---
+permalink: /tags/
+title: "Tags — Santiago Orrego"
+page_type: tid
+is_entry_page: true
+eleventyExcludeFromCollections: true
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block content %}
+<div class="tag-page">
+  <p class="breadcrumb">
+    <a href="{{ '/tid/' | url }}">things I've done/</a>
+    <span class="breadcrumb__current">tags</span>
+  </p>
+  <div class="rule-double"></div>
+
+  {% if collections.tidTags.length %}
+  <div class="tag-cloud">
+    {% for tag in collections.tidTags %}
+    <a class="tag-cloud__tag" href="{{ ('/tags/' ~ tag.slug ~ '/') | url }}" style="font-size: {{ tag.items.length | tagCloudSize }}rem;">{{ tag.label }}</a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No tags yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -5,7 +5,7 @@
     {% if tags and tags.length %}
     <ul class="entry-tags">
       {% for tag in tags %}
-      <li class="entry-tag">{{ tag }}</li>
+      <li><a class="entry-tag" href="{{ ('/tags/' ~ (tag | slugify) ~ '/') | url }}">{{ tag }}</a></li>
       {% endfor %}
     </ul>
     {% endif %}

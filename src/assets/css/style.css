@@ -457,8 +457,35 @@ body.page--cabinet .nav-list__current {
 }
 
 .entry-tag {
+  display: inline-block;
   border: 1px solid var(--color-border);
   padding: 0.1rem 0.75rem;
+  cursor: pointer;
+}
+
+.entry-tag:hover {
+  text-decoration: none;
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ---------------------------------------------------------
+   Tag pages: a single tag's pieces (/tags/<slug>/), and the
+   /tags/ cloud of every tag used, sized by frequency.
+--------------------------------------------------------- */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+}
+
+.tag-cloud__tag {
+  line-height: 1.2;
+}
+
+.tag-cloud__tag:hover {
+  text-decoration: underline;
 }
 
 .entry-date {

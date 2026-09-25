@@ -1,0 +1,32 @@
+---
+pagination:
+  data: collections.tidTags
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag.slug }}/"
+eleventyExcludeFromCollections: true
+page_type: tid
+is_entry_page: true
+eleventyComputed:
+  title: "{{ tag.label }} — Santiago Orrego"
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block content %}
+<div class="tag-page">
+  <p class="breadcrumb">
+    <a href="{{ '/tid/' | url }}">things I've done/</a>
+    <a href="{{ '/tags/' | url }}">tags/</a>
+    <span class="breadcrumb__current">{{ tag.label }}</span>
+  </p>
+  <div class="rule-double"></div>
+
+  <ul class="tid-section__pieces">
+    {% for piece in tag.items %}
+    <li><a href="{{ piece.url | url }}">{{ piece.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
