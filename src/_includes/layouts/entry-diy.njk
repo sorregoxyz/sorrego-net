@@ -5,7 +5,9 @@
 {% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
 
 {% block subheader %}
-<p class="breadcrumb">{{ breadcrumb }}</p>
+<p class="breadcrumb">
+  <a href="{{ section_prefix | url }}">{{ breadcrumb_label or 'things I\'ve done/' }}</a> {{ title }}
+</p>
 {% endblock %}
 
 {% block content %}
