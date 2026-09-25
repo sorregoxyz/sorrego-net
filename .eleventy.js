@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
           item.filePathStem.startsWith(prefix) &&
           !item.filePathStem.endsWith("/index")
       )
-      .sort((a, b) => b.date - a.date).localeCompare(b.data.title || ""))
+        .sort((a, b) => b.date - a.date)
   );
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
