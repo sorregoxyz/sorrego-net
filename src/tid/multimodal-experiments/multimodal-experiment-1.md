@@ -3,7 +3,7 @@ layout: layouts/entry-text.njk
 title: "multimodal-experiment-1"
 section_prefix: "/tid/multimodal-experiments/"
 section_label: "multimodal experiments"
-tags: ["tag 1", "tag 2", "tag 3", "tag 4", "tag 5"]
+tags: ["tag 1", "tag 2", "tag 3", "tag 4", "urban research"]
 date: 2026-06-09
 theme_color: "#FCE7FB"
 header_image: "/assets/images/home/courtyard-1200.webp"
