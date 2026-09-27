@@ -1,5 +1,7 @@
 <p class="breadcrumb">
-  <a href="{{ '/tid/' | url }}">things I've done/</a>
+  {% if crumb_parent_url != false %}
+  <a href="{{ (crumb_parent_url or '/tid/') | url }}">{{ crumb_parent_label or "things I've done" }}/</a>
+  {% endif %}
   <a href="{{ section_prefix | url }}">{{ section_label }}/</a>
   <span class="breadcrumb__current">{{ title }}</span>
 </p>
