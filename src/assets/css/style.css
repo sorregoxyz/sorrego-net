@@ -532,6 +532,30 @@ body.page--cabinet .nav-list__current {
 }
 
 /* ---------------------------------------------------------
+   Blog entries: body text (and header image, when present)
+   bleed wider than the page shell itself. The breadcrumb and
+   entry header stay at the normal shell width; only this
+   wrapped content escapes it. left/right + negative vw margins
+   center the strip on the viewport regardless of how deeply
+   nested it is inside the shell's own padding; the inner max-
+   width then re-centers the actual content within that strip.
+--------------------------------------------------------- */
+.blog-entry-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.blog-entry-bleed__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------------------------------------------------------
    Theme folder index (e.g. /tid/multimodal-experiments/) —
    intro text directly on the page, pieces listed below.
 --------------------------------------------------------- */

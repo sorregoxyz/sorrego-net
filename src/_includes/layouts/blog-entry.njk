@@ -1,0 +1,24 @@
+---
+is_entry_page: true
+page_type: tid
+section_prefix: "/blog/"
+section_label: "blog"
+crumb_parent_url: false
+---
+{% extends "layouts/base.njk" %}
+
+{% block nav %}{% include "partials/tid-nav.njk" %}{% endblock %}
+
+{% block content %}
+<article class="entry entry--text entry--no-image blog-entry">
+  {% include "partials/entry-breadcrumb.njk" %}
+  <div class="rule-double"></div>
+  {% include "partials/entry-header.njk" %}
+
+  <div class="blog-entry-bleed">
+    <div class="blog-entry-bleed__inner entry-body">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+{% endblock %}
