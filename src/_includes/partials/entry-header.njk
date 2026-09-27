@@ -10,7 +10,7 @@
     </ul>
     {% endif %}
     {% if page.date %}
-    <span class="entry-date">Posted: {{ page.date | readableDate }}</span>
+    <span class="entry-date" data-pagefind-meta="date:{{ page.date | readableDate }}">Posted: {{ page.date | readableDate }}</span>
     {% endif %}
   </div>
 </header>

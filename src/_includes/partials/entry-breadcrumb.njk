@@ -1,4 +1,4 @@
-<p class="breadcrumb">
+<p class="breadcrumb" data-pagefind-meta="category:{{ section_label }}">
   {% if crumb_parent_url != false %}
   <a href="{{ (crumb_parent_url or '/tid/') | url }}">{{ crumb_parent_label or "things I've done" }}/</a>
   {% endif %}

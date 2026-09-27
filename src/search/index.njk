@@ -51,10 +51,15 @@ eleventyExcludeFromCollections: true
           " for “" + query + "”:";
 
         resultsEl.innerHTML = items
-          .map(
-            (item) =>
-              `<li><a href="${resolveUrl(item.url)}">${item.meta.title || item.url}</a></li>`
-          )
+          .map((item) => {
+            const meta = item.meta || {};
+            const title = meta.title || item.url;
+            const label =
+              meta.date && meta.category
+                ? `${meta.date} /${meta.category}/ ${title}`
+                : title;
+            return `<li><a href="${resolveUrl(item.url)}">${label}</a></li>`;
+          })
           .join("");
       })
       .catch(() => {
