@@ -5,11 +5,14 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "build:gh-pages": "eleventy --pathprefix=sorrego-net"
+    "postbuild": "pagefind --site _site",
+    "build:gh-pages": "eleventy --pathprefix=sorrego-net",
+    "postbuild:gh-pages": "pagefind --site _site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "js-yaml": "^4.1.0",
-    "markdown-it": "^14.1.0"
+    "markdown-it": "^14.1.0",
+    "pagefind": "^1.1.0"
   }
 }
